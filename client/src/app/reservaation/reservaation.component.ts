@@ -108,6 +108,7 @@ public id;
       this.pickup = stdnt.pickup;
       this.flightno = stdnt.flightno;
       this.request = stdnt.request;
+      this.radio = stdnt.radio
 
 
 
