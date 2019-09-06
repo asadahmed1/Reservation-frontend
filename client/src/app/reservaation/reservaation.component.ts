@@ -90,11 +90,11 @@ public id;
 
   }
 // for editing the data
-  editReservation(id: any) {
+  editReservation(id) {
 
 
    for (let i = 0; i < this.reservation.length; i++) {
-      if (id == id){
+        if(this.reservation[i].id==id){
 
 
       var stdnt = (this.reservation[i]);

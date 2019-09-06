@@ -6,6 +6,7 @@
     <h1 class="text-center mb-3">Reservation Form</h1>
     <form #Form ='ngForm'>
         <div class="row">
+              <!-- name -->
                 <div class="col-sm-3">
                     <label>Name *</label>
                 </div>
@@ -13,7 +14,7 @@
                 <div class="col-sm-9">
                     <input type="text" name='mame' [(ngModel)]='name' placeholder="Name" class="form-control bg-light border-0 w-75"/>
                 </div>
-
+                <!-- email -->
                 <div class="col-sm-3 mt-3">
                         <label>Email *</label>
                 </div>
@@ -21,7 +22,7 @@
                 <div class="col-sm-9 mt-3">
                     <input type="text" name='email' [(ngModel)]='email' placeholder="Email *" class="form-control bg-light border-0 w-75"/>
                 </div>
-
+                <!-- Room type -->
                 <div class="col-sm-3 mt-3">
                         <label>Room Type</label>
                 </div>
@@ -32,7 +33,7 @@
                         <option *ngFor="let room of rooms" value="{{room}}">{{room}}</option>
                     </select>
                 </div>
-
+                <!-- Arrival Date -->
                 <div class="col-sm-3 mt-3" >
                         <label>Arrival Date *</label>
                 </div>
@@ -40,7 +41,7 @@
                 <div class="col-sm-9 mt-3">
                         <input type="text" class="form-control bg-light border-0 w-75" name='arrivalDate' [(ngModel)]='arrivalDate'/>
                 </div>
-
+                <!-- Number of Guests -->
                 <div class="col-sm-3 mt-3">
                         <label>Number Of Guest *</label>
                 </div>
@@ -48,11 +49,11 @@
                 <div class="col-sm-9 mt-3">
                         <input type="number" class="form-control bg-light border-0 w-25" [(ngModel)]="guests" name="guests"/>
                 </div>
-
+                <!-- Free Pickup -->
                 <div class="col-sm-3 mt-3">
                         <label>Free Pickup *</label>
                 </div>
-
+                <!-- Radio buttons -->
                 <div class="col-sm-9 mt-3">
                         <input type="radio" name="rd" value="yes" [(ngModel)]="radio" class="bg-light border-primary"/>
                         Yes
@@ -61,7 +62,7 @@
                         No
 
                 </div>
-
+                <!-- Flight Number -->
                 <div class="col-sm-3 mt-3">
                         <label>Flight Number</label>
                 </div>
@@ -69,7 +70,7 @@
                 <div class="col-sm-9 mt-3">
                         <input type="text" placeholder="Flight Number" class="form-control bg-light border-0 w-75" name='flightno' [(ngModel)]='flightno'/>
                 </div>
-
+                <!-- Special Request -->
                 <div class="col-sm-3 mt-3">
                         <label>Special Request</label>
                 </div>
@@ -77,7 +78,7 @@
                 <div class="col-sm-9 mt-3">
                         <textarea placeholder="type herer"  name='request' [(ngModel)]='request' class="form-control bg-light border-0 w-75"></textarea>
                 </div>
-
+                <!-- Add new reservation button -->
                 <div class="col-sm-10 mb-2">
                     <input type="button" value="Submit" (click)="AddReservation()" class="bg-primary pl-3 pr-3 pt-1 pb-1 float-right mr-3 mt-4 border-0"/>
 
@@ -94,7 +95,7 @@
         <table class="table">
                 <thead>
                   <tr>
-
+                    <!-- Text boxes field names -->
                     <th>Name</th>
                     <th>Email *</th>
                     <th>Room Type</th>
@@ -106,6 +107,7 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <!-- Interploation of data in their respective fields -->
                    <tr *ngFor="let reserve of reservation let i=index">
                     <td>{{reserve.name}}</td>
                     <td>{{reserve.email}}</td>
@@ -116,9 +118,12 @@
                     <td>{{reserve.pickup}}</td>
                     <td>{{reserve.flightno}}</td>
                     <td>{{reserve.request}}</td>
+                    <!-- update Button -->
                     <td><input type="button" class="btn btn-success btn-sm" value="Update" (click)="updateReservation(i)" /></td>
+                    <!-- Delete Button -->
                     <td><input type="button" class="btn btn-danger btn-sm" value="Delete" (click)='deleteStudent(i)'> </td>
-                    <td><input type="button" class="btn btn-info btn-sm" value="Edit" (click)='editReservation(i)'> </td>
+                    <!-- Edit Button -->
+                    <td><input type="button" class="btn btn-info btn-sm" value="Edit" (click)='editReservation(reserve.id)'> </td>
 
                   </tr>
                 </tbody>
