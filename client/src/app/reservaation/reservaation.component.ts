@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reservaation.component.css']
 })
 export class ReservaationComponent implements OnInit {
-  [x: string]: any;
+
   public reservation = Array();
  public name: string;
  public email: string;
@@ -119,7 +119,7 @@ public id;
     this.request =''
     this.radio=''
 
-    this.reservation[index].cityname=this.cityname;
+    // this.reservation[index].cityname=this.cityname;
     return this.reservation
     // var update = {index:{
     //     name: this.name,
